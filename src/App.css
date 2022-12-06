@@ -1,38 +1,158 @@
-.App {
-  text-align: center;
+* {
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+html {
+	--std-background: #111;
+	--std-color: white;
+	--std-color-80: #ffffffcc;
+	--std-svg-filter: invert(80%) sepia(92%) saturate(0%) hue-rotate(249deg) brightness(108%) contrast(107%);
+	--active-background: #111;
+	/* color combos */
+	--c1-bittersweet: #fc7860;
+	--c1-gossip: #e1f4b3;
+	--c1-gossip-80: #e1f4b3cc;
+	--c1-svg-filter: invert(98%) sepia(92%) saturate(412%) hue-rotate(18deg) brightness(99%) contrast(93%);
+	--c2-charade: #2d2e3f;
+	--c2-burnt-sienna: #e9574d;
+	--c2-burnt-sienna-80: #e9574dcc;
+	--c2-svg-filter: invert(35%) sepia(92%) saturate(1116%) hue-rotate(333deg) brightness(102%) contrast(83%);
+	--c3-denim: #3a2960;
+	--c3-geyser: #f47c2c;
+	--c3-geyser-80: #f47c2ccc;
+	--c3-svg-filter: invert(51%) sepia(85%) saturate(812%) hue-rotate(342deg) brightness(99%) contrast(93%);
+	--c4-denim-dark: #1a56c6;
+	--c4-mint-green: #8ff7a9;
+	--c4-mint-green-80: #8ff7a9cc;
+	--c4-svg-filter: invert(85%) sepia(21%) saturate(777%) hue-rotate(76deg) brightness(103%) contrast(94%);
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.cc-1 {
+	--std-background: var(--c1-bittersweet);
+	--std-color: var(--c1-gossip);
+	--std-color-80: var(--c1-gossip-80);
+	--std-svg-filter: var(--c1-svg-filter);
+	--active-background: var(--c1-bittersweet);
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+.cc-2 {
+	--std-background: var(--c2-charade);
+	--std-color: var(--c2-burnt-sienna);
+	--std-color-80: var(--c2-burnt-sienna-80);
+	--std-svg-filter: var(--c2-svg-filter);
+	--active-background: var(--c2-charade);
 }
 
-.App-link {
-  color: #61dafb;
+.cc-3 {
+	--std-background: var(--c3-denim);
+	--std-color: var(--c3-geyser);
+	--std-color-80: var(--c3-geyser-80);
+	--std-svg-filter: var(--c3-svg-filter);
+	--active-background: var(--c3-denim);
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.cc-4 {
+	--std-background: var(--c4-denim-dark);
+	--std-color: var(--c4-mint-green);
+	--std-color-80: var(--c4-mint-green-80);
+	--std-svg-filter: var(--c4-svg-filter);
+	--active-background: var(--c4-denim-dark);
+}
+
+body {
+	margin: 0px;
+	overflow: hidden;
+	height: -webkit-fill-available;
+	/* background: #fcb38c; */
+	background-color: var(--std-background);
+}
+
+.svg-filter {
+	filter: var(--std-svg-filter);
+}
+
+#root {
+	position: fixed;
+	width: 100vw;
+	min-height: 100%;
+	height: -webkit-fill-available;
+	/* background: #fcb38c; */
+}
+
+#main-container {
+	width: 100vw;
+	/* max-width: 1000px; */
+	min-height: 100%;
+	height: -webkit-fill-available;
+	margin: auto;
+	/* overflow: hidden; */
+	position: relative;
+	height: 100%;
+}
+
+/* button style reset */
+button {
+	border: none;
+	padding: 0;
+	font: inherit;
+	cursor: pointer !important;
+	outline: inherit;
+}
+
+/* scroll bar style */
+/* width */
+::-webkit-scrollbar {
+	/* width: 20px; */
+	margin-right: 2px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+	background: none;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+	background: var(--std-color-80);
+	border-radius: 9px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+	cursor: pointer;
+}
+
+.main-canvas {
+	position: absolute !important;
+	/* padding: 5em !important; */
+	/* width: calc(100% - 10em) !important;
+	height: calc(100% - 10em) !important; */
+	width: 100%;
+	height: 100%;
+	top: 0;
+	left: 0;
+}
+
+/* Link Styles */
+a {
+	color: var(--std-color);
+}
+
+a:visited {
+	color: color-mix(in srgb, #c9c9c9, var(--std-color));
+}
+a:hover {
+	color: var(--std-color);
+}
+
+/* slick arrows */
+.slick-arrow {
+	filter: invert(1) var(--std-svg-filter);
+}
+.slick-prev:hover:before,
+.slick-prev:focus:before,
+.slick-next:hover:before,
+.slick-next:focus:before {
+	opacity: 0.85 !important;
 }

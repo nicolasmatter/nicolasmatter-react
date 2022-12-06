@@ -1,0 +1,56 @@
+.site-header {
+	padding-top: 0.5em;
+	position: fixed;
+	width: 100%;
+	display: grid;
+	grid-template-columns: auto auto;
+	z-index: 9999;
+	font-weight: 300;
+	border-bottom: 1px solid var(--std-color);
+	background-color: rgba(33, 33, 33, 0.33);
+	font-size: 0.9em;
+}
+
+header,
+footer {
+	color: var(--std-color);
+}
+
+footer {
+	position: absolute;
+	bottom: 0;
+	right: 0;
+	font-size: 0.8em;
+}
+
+.site-title {
+	margin-left: 1.1em;
+}
+
+.navigation-container {
+	position: absolute;
+	right: 0;
+	margin: 0.5em 2em 0em 0em;
+	display: grid;
+	grid-template-columns: 1fr 1fr 1fr;
+}
+
+.navigation-button {
+	background: none;
+	color: var(--std-color);
+	padding-left: 1em;
+	text-align: right;
+}
+
+.navigation-button:hover {
+	color: var(--std-color-80);
+}
+
+.contact-button,
+.socials-button {
+	text-decoration: none;
+}
+
+.navigation-button:hover {
+	cursor: pointer;
+}

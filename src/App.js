@@ -1,25 +1,27 @@
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import "./App.css";
+import { Gallery } from "./components/Gallery.js";
+import "./components/Gallery.css";
+import "./components/Overlay.css";
+import { SiteFooter, SiteHeader } from "./components/Marginals.js";
+import "./mediaQuery.css";
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+// Read File
+
+class App extends React.Component {
+  constructor(props) {
+    super(props);
+  }
+  render() {
+    return (
+      <div id="main-container" className="main-container">
+        <SiteHeader />
+        <Gallery />
+
+        <SiteFooter />
+      </div>
+    );
+  }
 }
 
 export default App;

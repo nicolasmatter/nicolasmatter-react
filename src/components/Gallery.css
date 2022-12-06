@@ -1,0 +1,320 @@
+.gallery-container {
+	z-index: 99;
+	transition: margin-right 300ms ease-in-out, margin-left 300ms ease-in-out, margin-bottom 300ms ease-in-out,
+		margin-top 300ms ease-in-out;
+	overflow: hidden;
+	margin-right: 0;
+	position: absolute;
+	width: 100%;
+	/* max-width: 1000px; */
+	min-height: 100vh;
+	height: -webkit-fill-available;
+	overflow-y: scroll;
+}
+.gallery {
+	display: grid;
+	width: 54%;
+	row-gap: 0.5em;
+	column-gap: 0.5em;
+	overflow: hidden;
+	padding: 2.65em 1em;
+	max-width: 1000px;
+}
+
+.gallery hr {
+	width: 100%;
+	margin: 0;
+	border-style: unset;
+	border-bottom: 1px solid var(--std-color);
+}
+
+/* Different setups for gallery view sorting */
+.filter-container {
+	position: fixed;
+	right: 2em;
+	top: 2.65em;
+	display: grid;
+	grid-template-columns: 1fr 1fr 1fr;
+	outline: 1px solid var(--std-color);
+	/* min-width: 120px; */
+	font-size: 0.9em;
+	font-weight: 300;
+	border-radius: 3px;
+	background-color: black;
+	transition: opacity 200ms ease-in-out;
+}
+.overlay-left .filter-container,
+.overlay-up .filter-container {
+	opacity: 0;
+}
+.filter-button {
+	/* width: 21px; */
+	padding: 0em 1em 0em 1em;
+	cursor: pointer;
+	transition: background-color 100ms ease-in-out;
+	background: var(--active-background);
+}
+.filter-button:hover {
+	filter: brightness(1.5);
+}
+.filter-button:hover img {
+	opacity: 0.8;
+}
+.filter-button img {
+	height: 17px;
+	width: 17px;
+	margin-top: 3px;
+}
+.list {
+	grid-template-columns: auto;
+}
+.small .gallery-item {
+	height: 100px;
+}
+.small .gallery-item-headline {
+	display: -webkit-box;
+	-webkit-line-clamp: 3;
+	-webkit-box-orient: vertical;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	/* Needed to make it work */
+	overflow: hidden;
+}
+
+.tiles {
+	grid-template-columns: 1fr 1fr 1fr;
+}
+.tiles hr {
+	display: none;
+}
+.tiles .gallery-item-infos {
+	display: none;
+}
+.tiles .gallery-item {
+	grid-template-columns: auto;
+}
+
+/* Color Switcher */
+.color-switch-container {
+	position: fixed;
+	right: 2em;
+	top: 5.3em;
+	display: grid;
+	grid-template-columns: 1fr 1fr 1fr 1fr;
+	outline: 1px solid var(--std-color);
+	/* min-width: 120px; */
+	font-size: 0.9em;
+	font-weight: 300;
+	border-radius: 3px;
+	background-color: black;
+	transition: opacity 200ms ease-in-out;
+}
+.overlay-left .color-switch-container,
+.overlay-up .color-switch-container {
+	opacity: 0;
+}
+.color-switch-button {
+	padding: 0.22em 0.6em 0.22em 0.6em;
+	cursor: pointer;
+	transition: background-color 100ms ease-in-out;
+	height: 17px;
+	width: 17px;
+	background: var(--active-background);
+	text-align: center;
+}
+.cc-1 .cc-1-button {
+	background-color: rgba(255, 255, 255, 0.26);
+}
+.cc-2 .cc-2-button {
+	background-color: rgba(255, 255, 255, 0.26);
+}
+.cc-3 .cc-3-button {
+	background-color: rgba(255, 255, 255, 0.26);
+}
+.cc-4 .cc-4-button {
+	background-color: rgba(255, 255, 255, 0.26);
+}
+.color-switch-button:hover {
+	background-color: rgba(255, 255, 255, 0.26);
+}
+
+/* classes for moving the overlays */
+.overlay-left .gallery-container {
+	margin-right: 100%;
+	margin-left: -100%;
+}
+.overlay-up .gallery-container {
+	margin-bottom: 100vh;
+	margin-top: -100vh;
+}
+
+.gallery-item {
+	background: none;
+	transition: border-radius 100ms ease-in-out, background 100ms ease-in-out, width 1000ms ease-in-out,
+		height 1000ms ease-in-out;
+	display: flexbox;
+	background-position: 25% 25%;
+	background-size: cover;
+	background-repeat: no-repeat;
+	display: grid;
+	grid-template-columns: 50% 50%;
+	min-height: 100px;
+	min-width: 100px;
+	border-radius: 3px;
+	height: 300px;
+	min-width: 100px;
+}
+
+.gallery-item-button {
+	width: 200%;
+	background: none;
+}
+
+.gallery-item:hover {
+	background-color: rgba(33, 33, 33, 0.33);
+}
+
+.gallery-item-infos {
+	color: var(--std-color);
+	font-size: 0.8em;
+	padding: 0em 1em;
+	text-align: left;
+	pointer-events: none;
+}
+
+.gallery-item-headline {
+	font-weight: bold;
+	margin-bottom: 1em;
+}
+
+.tags-container {
+	display: flex;
+	max-width: 100%;
+	flex-wrap: wrap;
+}
+
+.gallery-item-tag {
+	pointer-events: all;
+	padding: 0.1em 0.5em;
+	margin: 0.2em 0.2em;
+	/* flex-grow: 4; */
+	border-radius: 6px;
+	outline: 1px solid var(--std-color-80);
+	flex-shrink: 0;
+	color: var(--std-color-80);
+	transition: outline 200ms ease-in-out, color 200ms ease-in-out, background-color 200ms ease-in-out;
+}
+
+.gallery-item-tag:hover {
+	outline: 1px solid var(--std-color);
+	color: var(--std-color);
+	background-color: rgba(255, 255, 255, 0.26);
+}
+
+.tag-button {
+	background: none;
+}
+
+.highlighted {
+	background: rgba(255, 255, 255, 0.26);
+}
+
+.gallery-item,
+.info-item {
+	background-color: rgba(0, 0, 0, 0.33);
+	transition: background-color 200ms ease-in-out, transform 200ms ease-in-out;
+}
+
+.gallery-item:active,
+.info-item:active {
+	transform: scale(0.98);
+	background-color: #333;
+}
+
+.info-item {
+	background-color: rgba(133, 133, 133, 0.67);
+	left: 1em;
+	bottom: 1em;
+}
+
+.info-item,
+.info-item-background {
+	position: absolute;
+	min-height: 64px;
+	/* outline: 3px solid #fcb38c; */
+	border-radius: 40px;
+	width: 64px;
+}
+.info-item-background {
+	width: 100%;
+	margin-top: -44px;
+}
+
+.gallery-item-background,
+.info-item-background {
+	background-color: none;
+	transition: outline 100ms ease-in-out, filter 300ms ease-in-out;
+}
+
+.gallery-item-background {
+	margin-top: -100px;
+}
+
+.gallery-item-text {
+	background-position: center;
+	background-size: cover;
+	border-radius: 3px;
+	color: var(--std-color);
+	font-size: 1.5em;
+	font-weight: 300;
+	width: 50%;
+	height: 100%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+.info-item-text {
+	color: var(--std-color);
+	font-size: 1.3em;
+	font-weight: 300;
+	height: 100%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.gallery-item-text span {
+	transition: background-color 300ms ease-in-out;
+	border-radius: 16px;
+	padding: 2px 10px 2px 10px;
+}
+
+.gallery-item-background:hover,
+.info-item-background:hover {
+	filter: blur(6px);
+}
+
+/* .gallery-item-background:hover .gallery-item-text {
+	filter: unset;
+} */
+
+.gallery-item .gallery-item-text span {
+	background-color: rgba(133, 133, 133, 0.167);
+}
+
+.gallery-item:hover .gallery-item-text span {
+	background-color: rgba(33, 33, 33, 0.67);
+}
+
+.active {
+	background: salmon;
+	border-radius: 40px;
+}
+
+.loading-gif {
+	position: absolute;
+	top: calc(50% - 32px);
+	left: calc(50% - 32px);
+	height: 64px;
+	width: 64px;
+}
