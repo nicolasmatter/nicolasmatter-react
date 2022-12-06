@@ -15,6 +15,7 @@ import tileFilterIcon from "../icons/tiles.svg";
 
 const builder = imageUrlBuilder(client);
 var waitToMove = false;
+var usingColorScheme = false;
 
 export function urlFor(source) {
   return builder.image(source);
@@ -84,10 +85,8 @@ export class Gallery extends React.Component {
 
   setOverlay = data => {
     if (data == undefined) {
-      console.log("other thing");
     } else {
       this.setState({ activeProject: data });
-      console.log("this thing");
       toggleOverlay("overlay-left");
     }
   };
@@ -95,9 +94,12 @@ export class Gallery extends React.Component {
   // Function: Change class of body element to switch color scheme
   changeColor = string => {
     let reset = false;
+    usingColorScheme = true;
+
     // 0: Check if color scheme is the active one, if yes then just remove all color scheme classes to reset
     if (document.body.classList.contains(string)) {
       reset = true;
+      usingColorScheme = false;
     }
     // 1: Remove all color-scheme classes from body
     document.body.className = "";
@@ -178,8 +180,7 @@ export class Gallery extends React.Component {
             className="main-canvas"
             onCreated={state => {
               state.camera.fov = 30;
-            }}
-          >
+            }}>
             <ambientLight intensity={0.4} color={0xfcb38c} />
             <pointLight position={[10, 10, 10]} intensity={1} />
             <NicoModel mousePosition={this.state.coords} />
@@ -232,8 +233,7 @@ export class Gallery extends React.Component {
             className="main-canvas"
             onCreated={state => {
               state.camera.fov = 30;
-            }}
-          >
+            }}>
             <ambientLight intensity={0.4} color={0xfcb38c} />
             <pointLight position={[10, 10, 10]} intensity={1} />
             <NicoModel mousePosition={this.state.coords} />
@@ -285,8 +285,7 @@ class GalleryItem extends React.Component {
                           tag.replace(/\s/g, "") +
                             " tag-button gallery-item-tag " +
                             this.props.checkFilter(tag.replace(/\s/g, "")),
-                        ]}
-                      >
+                        ]}>
                         {tag}
                       </button>
                     </>
@@ -385,8 +384,10 @@ export function NicoModel(props) {
         rotation={rot}
         position={[1, -1, 0]}
         scale={0.01}
-        ref={refMesh}
-      />
+        ref={refMesh}>
+        {" "}
+        {usingColorScheme && <meshStandardMaterial wireframe color="white" />}
+      </mesh>
     </group>
   );
 }
