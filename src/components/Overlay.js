@@ -3,28 +3,29 @@ import buttonImage from "../icons/cross.svg";
 import { PortableText } from "@portabletext/react";
 import { resetOverlay } from "./Gallery";
 //Components
-import { SimpleSlider } from "./SlickGallery";
+import { SlickGallery } from "./SlickGallery";
 
 export class Overlay extends React.Component {
 	render() {
 		let ref = this.props.data;
-
-		if (ref.images !== undefined) {
-			return (
-				<div className={this.props.name}>
-					<div className="overlay-content" id="overlay-parent">
-						<SimpleSlider key={this.props.sliderKey} imageList={ref.images} />
-						<OverlayText title={ref.name} year={ref.year} portableText={ref.portableText} headline={ref.headline} />
-						<OverlayButton />
+		if (ref) {
+			if (ref.images) {
+				return (
+					<div className={this.props.name}>
+						<div className="overlay-content" id="overlay-parent">
+							<SlickGallery key={this.props.sliderKey} imageList={ref.images} />
+							<OverlayText title={ref.name} year={ref.year} portableText={ref.portableText} headline={ref.headline} />
+							<OverlayButton />
+						</div>
 					</div>
-				</div>
-			);
-		} else {
-			return (
-				<div className={this.props.name}>
-					<div className="overlay-content" id="overlay-parent"></div>
-				</div>
-			);
+				);
+			} else {
+				return (
+					<div className={this.props.name}>
+						<div className="overlay-content" id="overlay-parent"></div>
+					</div>
+				);
+			}
 		}
 	}
 }

@@ -108,6 +108,14 @@ export class Gallery extends React.Component {
 		if (!reset) {
 			document.body.className = string;
 		}
+		this.setState({
+			coords: [
+				{
+					x: this.state.coords[0].x,
+					y: this.state.coords[0].y,
+				},
+			],
+		});
 	};
 
 	filterGallery = (string) => {
@@ -283,7 +291,6 @@ export function NicoModel(props) {
 				scale={0.01}
 				ref={refMesh}
 			>
-				{" "}
 				{usingColorScheme && <meshStandardMaterial wireframe color="white" />}
 			</mesh>
 		</group>

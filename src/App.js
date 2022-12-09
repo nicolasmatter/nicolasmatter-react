@@ -14,7 +14,6 @@ class App extends React.Component {
 			<div id="main-container" className="main-container">
 				<SiteHeader />
 				<Gallery />
-
 				<SiteFooter />
 			</div>
 		);
