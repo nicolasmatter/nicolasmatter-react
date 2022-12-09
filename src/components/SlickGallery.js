@@ -3,13 +3,9 @@ import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import { urlFor } from "./Gallery.js";
-import "./SlickGallery.css";
+import "../css/SlickGallery.css";
 
 export class SimpleSlider extends React.Component {
-	constructor(props) {
-		super(props);
-	}
-
 	render() {
 		var settings = {
 			dots: false,
@@ -43,7 +39,7 @@ const SliderItem = (props) => {
 	return (
 		<>
 			<div key={props.key} className="slickGallery-item">
-				<img src={props.url} />
+				<img src={props.url} alt="slider-item" />
 				<span>{props.text}</span>
 			</div>
 		</>

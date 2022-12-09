@@ -1,4 +1,5 @@
-import("./Marginals.css");
+import "../css/Marginals.css";
+import React from "react";
 
 export const SiteHeader = () => {
 	return (
@@ -6,9 +7,9 @@ export const SiteHeader = () => {
 			<header className="site-header">
 				<span className="site-title">nicolasmatter.ch</span>
 				<div className="navigation-container">
-					<a onClick={() => toggleAbout()} className="navigation-button about-button">
+					<span onClick={() => toggleAbout()} className="navigation-button about-button">
 						info
-					</a>
+					</span>
 					<a href="mailto:hello@nicolasmatter.ch" className="navigation-button contact-button">
 						contact
 					</a>
