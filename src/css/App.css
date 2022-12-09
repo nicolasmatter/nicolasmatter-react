@@ -135,7 +135,8 @@ button {
 }
 
 /* Link Styles */
-a {
+a,
+span {
 	color: var(--std-color);
 }
 

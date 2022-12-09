@@ -26,6 +26,7 @@ export class GalleryItem extends React.Component {
 								return (
 									<>
 										<button
+											key={tag._id}
 											onClick={() => this.props.setFilter(tag.replace(/\s/g, ""))}
 											className={[
 												tag.replace(/\s/g, "") +
