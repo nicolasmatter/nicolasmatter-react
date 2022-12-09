@@ -1,9 +1,7 @@
 import React from "react";
 import client from "../client";
 import imageUrlBuilder from "@sanity/image-url";
-import { SimpleSlider } from "./SlickGallery";
-import buttonImage from "../icons/cross.svg";
-import { PortableText } from "@portabletext/react";
+
 import { useRef } from "react";
 import { useGLTF } from "@react-three/drei";
 import nico5 from "../models/nico5.glb";
@@ -12,6 +10,9 @@ import loadingGif from "../icons/loading-rippled.gif";
 import bigFilterIcon from "../icons/big.svg";
 import smallFilterIcon from "../icons/small.svg";
 import tileFilterIcon from "../icons/tiles.svg";
+//Import Components
+import { GalleryItem } from "./GalleryItem.js";
+import { Overlay } from "./Overlay.js";
 
 const builder = imageUrlBuilder(client);
 var waitToMove = false;
@@ -252,52 +253,6 @@ export class Gallery extends React.Component {
 	}
 }
 
-class GalleryItem extends React.Component {
-	constructor(props) {
-		super(props);
-		this.state = {
-			data: props.data,
-		};
-	}
-	render() {
-		let data = this.state.data;
-
-		return (
-			<>
-				<div className="gallery-item">
-					<button onClick={() => this.props.setProject(data)} className="gallery-item-button">
-						<div className="gallery-item-text" style={{ backgroundImage: `url(${urlFor(data.backgroundImage)})` }}>
-							<span>{data.name}</span>
-						</div>
-					</button>
-					<div className="gallery-item-infos">
-						<div className="gallery-item-headline">{data.headline}</div>
-						<div className="tags-container">
-							{data.tags.map((tag) => {
-								return (
-									<>
-										<button
-											onClick={() => this.props.setFilter(tag.replace(/\s/g, ""))}
-											className={[
-												tag.replace(/\s/g, "") +
-													" tag-button gallery-item-tag " +
-													this.props.checkFilter(tag.replace(/\s/g, "")),
-											]}
-										>
-											{tag}
-										</button>
-									</>
-								);
-							})}
-						</div>
-					</div>
-				</div>
-				<hr></hr>
-			</>
-		);
-	}
-}
-
 // Activate Overlay by giving it a class with the direction it is supposed to move
 export const toggleOverlay = (direction) => {
 	let main = document.getElementById("main-container");
@@ -309,53 +264,6 @@ export const resetOverlay = () => {
 	let main = document.getElementById("main-container");
 	main.classList.remove("overlay-left");
 	main.classList.remove("overlay-up");
-};
-
-class Overlay extends React.Component {
-	render() {
-		let ref = this.props.data;
-
-		if (ref.images !== undefined) {
-			return (
-				<div className={this.props.name}>
-					<div className="overlay-content" id="overlay-parent">
-						<SimpleSlider key={this.props.sliderKey} imageList={ref.images} />
-						<OverlayText title={ref.name} year={ref.year} portableText={ref.portableText} headline={ref.headline} />
-						<OverlayButton />
-					</div>
-				</div>
-			);
-		} else {
-			return (
-				<div className={this.props.name}>
-					<div className="overlay-content" id="overlay-parent"></div>
-				</div>
-			);
-		}
-	}
-}
-
-const OverlayButton = (props) => {
-	return (
-		<button className="overlay-button" onClick={resetOverlay}>
-			close<div className="overlay-button-x" style={{ backgroundImage: `url(${buttonImage})` }}></div>
-		</button>
-	);
-};
-
-const OverlayText = (props) => {
-	return (
-		<>
-			<div className="overlay-text">
-				<h1>{props.title}</h1>
-				<h2>{props.year}</h2>
-				<h3>{props.headline}</h3>
-				<span>
-					<PortableText value={props.portableText} />
-				</span>
-			</div>
-		</>
-	);
 };
 
 export function NicoModel(props) {

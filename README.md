@@ -13,10 +13,3 @@ This is the React WebApp Version of my personal Portfolio. It uses data from the
 ## Controls
 
 Keys 1-4 to change color schemes.
-
-## TODO
-
-### Refactor
-
-- Put into Components
-- -
