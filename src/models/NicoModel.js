@@ -11,7 +11,6 @@ export function NicoModel(props) {
 	const refMesh = useRef();
 	useFrame(({ mouse }) => {
 		if (refMesh.current) {
-			// console.log(mouse);
 			refMesh.current.rotation.z = -mouse.x;
 			refMesh.current.rotation.x = 1.7 - mouse.y;
 		}

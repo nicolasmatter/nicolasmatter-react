@@ -3,13 +3,9 @@ import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import { urlFor } from "./Gallery.js";
-import "./SlickGallery.css";
+import "../css/SlickGallery.css";
 
-export class SimpleSlider extends React.Component {
-	constructor(props) {
-		super(props);
-	}
-
+export class SlickGallery extends React.Component {
 	render() {
 		var settings = {
 			dots: false,
@@ -25,14 +21,14 @@ export class SimpleSlider extends React.Component {
 			return (
 				<Slider key="slick-slider" className="slick" {...settings}>
 					{this.props.imageList.map((item) => (
-						<SliderItem name={item.name} key={item.key} url={urlFor(item)} text={item.text} />
+						<SliderItem name={item.name} key={item} url={urlFor(item)} text={item.text} />
 					))}
 				</Slider>
 			);
 		} else {
 			return (
 				<Slider key="placeholder-slider" className="slick" {...settings}>
-					<SliderItem name="placeholder" key="1" url="https://nicolasmatter.ch/pbp/img/1080_ich.webp" />
+					<SliderItem name="placeholder" key="placeholder-slider" url="https://nicolasmatter.ch/pbp/img/1080_ich.webp" />
 				</Slider>
 			);
 		}
@@ -43,7 +39,7 @@ const SliderItem = (props) => {
 	return (
 		<>
 			<div key={props.key} className="slickGallery-item">
-				<img src={props.url} />
+				<img src={props.url} alt="slider-item" />
 				<span>{props.text}</span>
 			</div>
 		</>
