@@ -5,8 +5,8 @@ import "./css/mediaQuery.css";
 
 import { Gallery } from "./components/Gallery.js";
 import React from "react";
-import SiteFooter from "./components/SiteFooter.jsx";
-import SiteHeader from "./components/SiteHeader.jsx";
+import SiteFooter from "./components/SiteFooter.js";
+import SiteHeader from "./components/SiteHeader.js";
 
 // Read File
 
