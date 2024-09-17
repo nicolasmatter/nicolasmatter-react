@@ -1,39 +1,33 @@
 .slickGallery-item {
-	/* background-color: aquamarine;
-	 */
-	height: calc(50vh - 5em);
-	width: 100%;
+  height: calc(50vh - 5em);
+  width: 100%;
 }
 .slickGallery-item span {
-	position: absolute;
-	bottom: 2em;
-	padding-left: 2em;
-	font-size: 0.8em;
-	font-style: italic;
-	color: #333;
+  position: absolute;
+  bottom: 2em;
+  padding-left: 2em;
+  font-size: 0.8em;
+  font-style: italic;
+  color: #333;
 }
 
 .slickGallery-item img {
-	height: 100%;
-	width: 100%;
-	object-fit: cover;
-	overflow: hidden;
-	position: relative;
-	object-position: 50% 50%;
+  height: 100%;
+  width: 100%;
+  object-fit: contain;
+  overflow: hidden;
+  position: relative;
+  object-position: 50% 50%;
 }
 
-/* .slick-slider {
-	height: 100%;
-} */
-
 .slick-prev {
-	left: 0;
-	z-index: 99;
-	transform: translate(40px, -50%);
+  left: 0;
+  z-index: 99;
+  transform: translate(40px, -50%);
 }
 
 .slick-next {
-	right: 0;
-	z-index: 99;
-	transform: translate(-40px, -50%);
+  right: 0;
+  z-index: 99;
+  transform: translate(-40px, -50%);
 }

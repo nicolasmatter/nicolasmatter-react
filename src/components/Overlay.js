@@ -1,9 +1,9 @@
-import React from "react";
-import buttonImage from "../icons/return.svg";
 import { PortableText } from "@portabletext/react";
-import { resetOverlay } from "./Gallery";
+import React from "react";
 //Components
 import { SlickGallery } from "./SlickGallery";
+import buttonImage from "../icons/return.svg";
+import { resetOverlay } from "./Gallery";
 
 export class Overlay extends React.Component {
   render() {
@@ -15,7 +15,12 @@ export class Overlay extends React.Component {
             <OverlayButton />
             <div className="overlay-content" id="overlay-parent">
               <SlickGallery key={this.props.sliderKey} imageList={ref.images} />
-              <OverlayText title={ref.name} year={ref.year} portableText={ref.portableText} headline={ref.headline} />
+              <OverlayText
+                title={ref.name}
+                year={ref.year}
+                portableText={ref.portableText}
+                headline={ref.headline}
+              />
             </div>
           </div>
         );
@@ -30,24 +35,27 @@ export class Overlay extends React.Component {
   }
 }
 
-const OverlayButton = props => {
+const OverlayButton = (props) => {
   return (
     <div>
       <button className="overlay-button" onClick={resetOverlay}>
-        <div className="overlay-button-x" style={{ backgroundImage: `url(${buttonImage})` }}></div>
+        <div
+          className="overlay-button-x"
+          style={{ backgroundImage: `url(${buttonImage})` }}
+        ></div>
       </button>
     </div>
   );
 };
 
-const OverlayText = props => {
+const OverlayText = (props) => {
   return (
     <>
       <div className="overlay-text">
         <h1>{props.title}</h1>
         <h2>{props.year}</h2>
         <h3>{props.headline}</h3>
-        <span>
+        <span className="text-red">
           <PortableText value={props.portableText} />
         </span>
       </div>

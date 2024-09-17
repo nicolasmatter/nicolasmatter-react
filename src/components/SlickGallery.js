@@ -49,7 +49,7 @@ const SliderItem = (props) => {
   return (
     <>
       <div key={props.key} className="slickGallery-item">
-        <img src={props.url} alt="slider-item " />
+        <img src={props.url} alt="slider-item" />
         <span>{props.text}</span>
       </div>
     </>
