@@ -1,7 +1,12 @@
 import "../css/Marginals.css";
+
 import React from "react";
 
-export const SiteHeader = () => {
+const SiteHeader = () => {
+	const toggleAbout = () => {
+		let main = document.getElementById("main-container");
+		main.classList.toggle("overlay-up");
+	};
 	return (
 		<>
 			<header className="site-header">
@@ -21,12 +26,4 @@ export const SiteHeader = () => {
 		</>
 	);
 };
-
-export const SiteFooter = () => {
-	return <>{/* <footer>©nicolasmatter.ch</footer> */}</>;
-};
-
-const toggleAbout = () => {
-	let main = document.getElementById("main-container");
-	main.classList.toggle("overlay-up");
-};
+export default SiteHeader;
