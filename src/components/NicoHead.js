@@ -1,7 +1,7 @@
 import React, { useRef } from "react";
 
 import { Canvas } from "@react-three/fiber";
-import nico5 from "../models/nico5.glb";
+import nico5 from "../assets/models/nico5.glb";
 import { useGLTF } from "@react-three/drei";
 
 useGLTF.preload(nico5);

@@ -2,12 +2,12 @@ import { GalleryItem } from "./GalleryItem.js";
 import NicoHead from "./NicoHead.js";
 import { Overlay } from "./Overlay.js";
 import React from "react";
-import bigFilterIcon from "../icons/big.svg";
+import bigFilterIcon from "../assets/icons/big.svg";
 import client from "../client.js";
 import imageUrlBuilder from "@sanity/image-url";
-import loadingGif from "../icons/loading-rippled.gif";
-import smallFilterIcon from "../icons/small.svg";
-import tileFilterIcon from "../icons/tiles.svg";
+import loadingGif from "../assets/icons/loading-rippled.gif";
+import smallFilterIcon from "../assets/icons/small.svg";
+import tileFilterIcon from "../assets/icons/tiles.svg";
 
 const builder = imageUrlBuilder(client);
 var waitToMove = false;
@@ -114,7 +114,7 @@ export class GalleryContainer extends React.Component {
   };
 
   filterGallery = (string) => {
-    // 1: Get  all objects which have the classname string we are looking for and put them in an array
+    // 1: Get  all objects which have the className string we are looking for and put them in an array
     let array = document.getElementsByClassName("tag-button");
     let filteredArray = this.state.filteredProjects;
 

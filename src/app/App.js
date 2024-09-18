@@ -1,12 +1,9 @@
-import "./css/App.css";
-import "./css/Gallery.css";
-import "./css/Overlay.css";
-import "./css/mediaQuery.css";
+import "../css/main.css";
 
-import { GalleryContainer } from "./components/GalleryContainer.js";
+import { GalleryContainer } from "../components/GalleryContainer.js";
 import React from "react";
-import SiteFooter from "./components/SiteFooter.js";
-import SiteHeader from "./components/SiteHeader.js";
+import SiteFooter from "../components/SiteFooter.js";
+import SiteHeader from "../components/SiteHeader.js";
 
 // Read File
 

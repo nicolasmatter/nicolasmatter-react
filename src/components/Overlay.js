@@ -2,7 +2,7 @@ import { PortableText } from "@portabletext/react";
 import React from "react";
 //Components
 import { SlickGallery } from "./SlickGallery";
-import buttonImage from "../icons/return.svg";
+import buttonImage from "../assets/icons/return.svg";
 import { resetOverlay } from "./GalleryContainer";
 
 export class Overlay extends React.Component {
