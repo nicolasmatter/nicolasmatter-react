@@ -4,7 +4,7 @@ import "../css/SlickGallery.css";
 
 import React from "react";
 import Slider from "react-slick";
-import { urlFor } from "./Gallery.js";
+import { urlFor } from "./GalleryContainer.js";
 
 export class SlickGallery extends React.Component {
   render() {

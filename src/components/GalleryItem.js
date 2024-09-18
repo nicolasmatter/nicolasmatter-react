@@ -1,5 +1,5 @@
 import React from "react";
-import { urlFor } from "./Gallery";
+import { urlFor } from "./GalleryContainer";
 
 export class GalleryItem extends React.Component {
   constructor(props) {
@@ -13,17 +13,28 @@ export class GalleryItem extends React.Component {
     return (
       <>
         <div
-          className={"gallery-item " + this.props.showHideGalleryItem(data.projectID)}
-          id={"gallery-item-" + data.projectID}>
-          <button onClick={() => this.props.setProject(data)} className="gallery-item-button">
-            <div className="gallery-item-text" style={{ backgroundImage: `url(${urlFor(data.backgroundImage)})` }}>
+          className={
+            "gallery-item " + this.props.showHideGalleryItem(data.projectID)
+          }
+          id={"gallery-item-" + data.projectID}
+        >
+          <button
+            onClick={() => this.props.setProject(data)}
+            className="gallery-item-button"
+          >
+            <div
+              className="gallery-item-text"
+              style={{
+                backgroundImage: `url(${urlFor(data.backgroundImage)})`,
+              }}
+            >
               <span>{data.name}</span>
             </div>
           </button>
           <div className="gallery-item-infos">
             <div className="gallery-item-headline">{data.headline}</div>
             <div className="tags-container">
-              {data.tags.map(tag => {
+              {data.tags.map((tag) => {
                 let noSpaceTag = tag.replace(/\s/g, "");
                 return (
                   <>
@@ -37,7 +48,8 @@ export class GalleryItem extends React.Component {
                           noSpaceTag +
                           " tag-button gallery-item-tag " +
                           this.props.checkFilter(noSpaceTag),
-                      ]}></TagButton>
+                      ]}
+                    ></TagButton>
                   </>
                 );
               })}
@@ -49,7 +61,7 @@ export class GalleryItem extends React.Component {
   }
 }
 
-const TagButton = props => {
+const TagButton = (props) => {
   return (
     <button onClick={props.setfilter} className={props.classString}>
       {props.tag}

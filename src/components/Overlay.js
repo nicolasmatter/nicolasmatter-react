@@ -3,7 +3,7 @@ import React from "react";
 //Components
 import { SlickGallery } from "./SlickGallery";
 import buttonImage from "../icons/return.svg";
-import { resetOverlay } from "./Gallery";
+import { resetOverlay } from "./GalleryContainer";
 
 export class Overlay extends React.Component {
   render() {

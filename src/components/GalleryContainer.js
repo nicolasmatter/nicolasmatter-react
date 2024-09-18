@@ -17,7 +17,7 @@ export function urlFor(source) {
   return builder.image(source);
 }
 
-export class Gallery extends React.Component {
+export class GalleryContainer extends React.Component {
   constructor(props) {
     super(props);
     this.state = {

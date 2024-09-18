@@ -3,7 +3,7 @@ import "./css/Gallery.css";
 import "./css/Overlay.css";
 import "./css/mediaQuery.css";
 
-import { Gallery } from "./components/Gallery.js";
+import { GalleryContainer } from "./components/GalleryContainer.js";
 import React from "react";
 import SiteFooter from "./components/SiteFooter.js";
 import SiteHeader from "./components/SiteHeader.js";
@@ -15,7 +15,7 @@ class App extends React.Component {
     return (
       <div id="main-container" className="main-container">
         <SiteHeader />
-        <Gallery />
+        <GalleryContainer />
         <SiteFooter />
       </div>
     );
