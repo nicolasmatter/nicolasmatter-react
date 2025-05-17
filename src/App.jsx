@@ -1,9 +1,12 @@
+import "./css/main.css";
+
 import { Route, BrowserRouter as Router, Routes } from "react-router-dom";
 
 import About from "./pages/About";
+import Contact from "./pages/Contact";
 import Home from "./pages/Home";
 import Layout from "./layout/Layout";
-import Projects from "./pages/Projects";
+import ProjectDetail from "./pages/ProjectDetail";
 import React from "react";
 
 const App = () => {
@@ -12,8 +15,10 @@ const App = () => {
       <Routes>
         <Route path="/" element={<Layout />}>
           <Route index element={<Home />} />
-          <Route path="projects" element={<Projects />} />
+
+          <Route path="project/:id" element={<ProjectDetail />} />
           <Route path="about" element={<About />} />
+          <Route path="contact" element={<Contact />} />
         </Route>
       </Routes>
     </Router>

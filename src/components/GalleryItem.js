@@ -1,5 +1,6 @@
 import React from "react";
 import { urlFor } from "./GalleryContainer";
+import { useNavigate } from "react-router-dom";
 
 export class GalleryItem extends React.Component {
   constructor(props) {
@@ -8,6 +9,7 @@ export class GalleryItem extends React.Component {
       data: props.data,
     };
   }
+
   render() {
     let data = this.state.data;
     return (
@@ -19,7 +21,10 @@ export class GalleryItem extends React.Component {
           id={"gallery-item-" + data.projectID}
         >
           <button
-            onClick={() => this.props.setProject(data)}
+            onClick={() => {
+              this.props.setProject(data);
+              window.location.href = `/project/${data.projectID}`;
+            }}
             className="gallery-item-button"
           >
             <div

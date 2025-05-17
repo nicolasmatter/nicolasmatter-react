@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 
-import Navigation from "../components/Navigation";
 import { Outlet } from "react-router-dom";
+import SiteHeader from "../components/SiteHeader";
 import WebGLHead from "../components/WebGLHead";
 
 const Layout = () => {
@@ -20,13 +20,11 @@ const Layout = () => {
   }, []);
 
   return (
-    <div className="layout">
-      <Navigation />
+    <div id="main-container" className="layout">
+      <SiteHeader />
       <WebGLHead
         coords={[{ x: mousePosition.x, y: mousePosition.y }]}
-        usingColorScheme={
-          window.matchMedia("(prefers-color-scheme: dark)").matches
-        }
+        usingColorScheme={false}
       />
       <Outlet />
     </div>

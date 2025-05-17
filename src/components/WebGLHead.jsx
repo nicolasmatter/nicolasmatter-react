@@ -24,7 +24,6 @@ const WebGLHead = ({ coords, usingColorScheme }) => {
 const NicoModel = ({ usingColorScheme, mousePosition }) => {
   const refMesh = useRef();
   const { nodes, materials } = useGLTF(nico5);
-  console.log(mousePosition);
   const rot = [
     0.7 + mousePosition[0].y / window.innerHeight,
     0,
