@@ -195,115 +195,108 @@ export class GalleryContainer extends React.Component {
       activeFilters += " " + this.state.activeFilters[i];
     }
 
-    {
-      return (
-        <>
-          <div className="gallery-container" onMouseMove={this.handleMouseMove}>
-            {!this.state.data.length && (
-              <>
-                <img
-                  className="loading-gif"
-                  src={loadingGif}
-                  alt="loading-gif"
-                ></img>
-              </>
-            )}
+    return (
+      <>
+        <div className="gallery-container" onMouseMove={this.handleMouseMove}>
+          {!this.state.data.length && (
+            <>
+              <img
+                className="loading-gif"
+                src={loadingGif}
+                alt="loading-gif"
+              ></img>
+            </>
+          )}
 
-            {/* Filters for different views of gallery */}
-            <div className="filter-container">
-              <span
-                className="filter-button"
-                onClick={() => this.changeGalleryView("list")}
-              >
-                <img
-                  className="svg-filter"
-                  src={bigFilterIcon}
-                  alt="svg-filter"
-                ></img>
-              </span>
-              <span
-                className="filter-button"
-                onClick={() => this.changeGalleryView("small")}
-              >
-                <img
-                  className="svg-filter"
-                  src={smallFilterIcon}
-                  alt="svg-filter"
-                ></img>
-              </span>
-              <span
-                className="filter-button"
-                onClick={() => this.changeGalleryView("tiles")}
-              >
-                <img
-                  className="svg-filter"
-                  src={tileFilterIcon}
-                  alt="svg-filter"
-                ></img>
-              </span>
-            </div>
-            <div className="color-switch-container">
-              <span
-                className="cc-1-button color-switch-button"
-                onClick={() => this.changeColor("cc-1")}
-              >
-                1
-              </span>
-              <span
-                className="cc-2-button color-switch-button"
-                onClick={() => this.changeColor("cc-2")}
-              >
-                2
-              </span>
-              <span
-                className="cc-3-button color-switch-button"
-                onClick={() => this.changeColor("cc-3")}
-              >
-                3
-              </span>
-              <span
-                className="cc-4-button color-switch-button"
-                onClick={() => this.changeColor("cc-4")}
-              >
-                4
-              </span>
-            </div>
-            <div
-              className={
-                "gallery " + this.state.galleryView + " " + activeFilters
-              }
+          {/* Filters for different views of gallery */}
+          <div className="filter-container">
+            <span
+              className="filter-button"
+              onClick={() => this.changeGalleryView("list")}
             >
-              {this.state.data.map((item) => (
-                <GalleryItem
-                  key={item.projectID}
-                  data={item}
-                  setProject={this.setOverlay}
-                  setFilter={this.filterGallery}
-                  checkFilter={this.checkFilter}
-                  showHideGalleryItem={this.showHideGalleryItem}
-                />
-              ))}
-            </div>
+              <img
+                className="svg-filter"
+                src={bigFilterIcon}
+                alt="svg-filter"
+              ></img>
+            </span>
+            <span
+              className="filter-button"
+              onClick={() => this.changeGalleryView("small")}
+            >
+              <img
+                className="svg-filter"
+                src={smallFilterIcon}
+                alt="svg-filter"
+              ></img>
+            </span>
+            <span
+              className="filter-button"
+              onClick={() => this.changeGalleryView("tiles")}
+            >
+              <img
+                className="svg-filter"
+                src={tileFilterIcon}
+                alt="svg-filter"
+              ></img>
+            </span>
           </div>
+          <div className="color-switch-container">
+            <span
+              className="cc-1-button color-switch-button"
+              onClick={() => this.changeColor("cc-1")}
+            >
+              1
+            </span>
+            <span
+              className="cc-2-button color-switch-button"
+              onClick={() => this.changeColor("cc-2")}
+            >
+              2
+            </span>
+            <span
+              className="cc-3-button color-switch-button"
+              onClick={() => this.changeColor("cc-3")}
+            >
+              3
+            </span>
+            <span
+              className="cc-4-button color-switch-button"
+              onClick={() => this.changeColor("cc-4")}
+            >
+              4
+            </span>
+          </div>
+          <div
+            className={
+              "gallery " + this.state.galleryView + " " + activeFilters
+            }
+          >
+            {this.state.data.map((item) => (
+              <GalleryItem
+                key={item.projectID}
+                data={item}
+                setProject={this.setOverlay}
+                setFilter={this.filterGallery}
+                checkFilter={this.checkFilter}
+                showHideGalleryItem={this.showHideGalleryItem}
+              />
+            ))}
+          </div>
+        </div>
 
-          <NicoHead
-            coords={this.state.coords}
-            usingColorScheme={usingColorScheme}
-          />
-
-          <Overlay
-            sliderKey="overlay-right"
-            name="overlay-container overlay-container-right"
-            data={this.state.activeProject}
-          />
-          <Overlay
-            sliderKey="overlay-bottom"
-            name="overlay-container overlay-container-bottom"
-            data={this.state.activeAbout[0]}
-          />
-        </>
-      );
-    }
+        <Overlay
+          sliderKey="overlay-right"
+          name="overlay-container overlay-container-right"
+          data={this.state.activeProject}
+        />
+        <Overlay
+          sliderKey="overlay-bottom"
+          name="overlay-container overlay-container-bottom"
+          data={this.state.activeAbout[0]}
+        />
+      </>
+    );
   }
 }
 

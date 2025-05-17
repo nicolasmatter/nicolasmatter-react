@@ -4,10 +4,6 @@ import { Link } from "react-router-dom";
 import React from "react";
 
 const SiteHeader = () => {
-  const toggleAbout = () => {
-    let main = document.getElementById("main-container");
-    main.classList.toggle("overlay-up");
-  };
   return (
     <>
       <header className="site-header">

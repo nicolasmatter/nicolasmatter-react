@@ -1,6 +1,5 @@
 import React from "react";
 import { urlFor } from "./GalleryContainer";
-import { useNavigate } from "react-router-dom";
 
 export class GalleryItem extends React.Component {
   constructor(props) {
