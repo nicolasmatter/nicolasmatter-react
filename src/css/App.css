@@ -120,7 +120,6 @@ button {
 /* Handle */
 ::-webkit-scrollbar-thumb {
   background: var(--std-color-80);
-  border-radius: 9px;
 }
 
 /* Handle on hover */
