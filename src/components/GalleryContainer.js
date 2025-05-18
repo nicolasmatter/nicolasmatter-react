@@ -11,8 +11,11 @@ import tileFilterIcon from "../assets/icons/tiles.svg";
 const builder = imageUrlBuilder(client);
 
 export function urlFor(source) {
-  console.log(source);
-  return builder.image(source);
+  return builder
+    .image(source)
+    .width(1920) // Request full HD width
+    .quality(90) // High quality JPEG
+    .auto("format"); // Automatically choose best format (WebP if supported)
 }
 
 export const GalleryContainer = () => {
