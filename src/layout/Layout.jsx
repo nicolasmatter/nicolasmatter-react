@@ -4,7 +4,7 @@ import { Outlet } from "react-router-dom";
 import SiteHeader from "../components/SiteHeader";
 import WebGLHead from "../components/WebGLHead";
 
-const Layout = () => {
+const Layout = ({ colorScheme, changeColor }) => {
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
 
   useEffect(() => {
@@ -24,9 +24,9 @@ const Layout = () => {
       <SiteHeader />
       <WebGLHead
         coords={[{ x: mousePosition.x, y: mousePosition.y }]}
-        usingColorScheme={false}
+        usingColorScheme={colorScheme !== ""}
       />
-      <Outlet />
+      <Outlet context={{ colorScheme, changeColor }} />
     </div>
   );
 };

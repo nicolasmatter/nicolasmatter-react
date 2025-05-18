@@ -1,19 +1,18 @@
 import { PortableText } from "@portabletext/react";
 import React from "react";
-//Components
 import { SlickGallery } from "./SlickGallery";
-import buttonImage from "../assets/icons/return.svg";
-import { resetOverlay } from "./GalleryContainer";
 
-export class Overlay extends React.Component {
+export class ProjectDetails extends React.Component {
   render() {
     let ref = this.props.data;
     if (ref) {
       if (ref.images) {
         return (
-          <div className={this.props.name}>
-            <OverlayButton />
-            <div className="overlay-content" id="overlay-parent">
+          <div className="project-details-container">
+            <div
+              className="project-details-content"
+              id="project-details-parent"
+            >
               <SlickGallery key={this.props.sliderKey} imageList={ref.images} />
               <OverlayText
                 title={ref.name}
@@ -34,19 +33,6 @@ export class Overlay extends React.Component {
     }
   }
 }
-
-const OverlayButton = (props) => {
-  return (
-    <div>
-      <button className="overlay-button" onClick={resetOverlay}>
-        <div
-          className="overlay-button-x"
-          style={{ backgroundImage: `url(${buttonImage})` }}
-        ></div>
-      </button>
-    </div>
-  );
-};
 
 const OverlayText = (props) => {
   return (

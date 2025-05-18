@@ -6,6 +6,16 @@
   margin-top: 0;
 }
 
+.project-details-container {
+  z-index: 99;
+  position: absolute;
+  padding: 5em;
+  width: calc(100% - 10em);
+  max-width: 1000px;
+  min-height: calc(100% - 10em);
+  height: -webkit-fill-available;
+}
+
 .overlay-container {
   z-index: 99;
   top: 0;
@@ -60,7 +70,8 @@
   right: 3em;
   top: calc(50% + 0.5em);
   outline: none;
-  transition: background-color 200ms ease-in-out, transform 200ms ease-in-out, background-size 200ms ease-in-out;
+  transition: background-color 200ms ease-in-out, transform 200ms ease-in-out,
+    background-size 200ms ease-in-out;
 }
 .overlay-button-x {
   background-position: 50% 50%;
