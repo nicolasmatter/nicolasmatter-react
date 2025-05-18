@@ -1,7 +1,7 @@
 .gallery-container {
-  z-index: 99;
-  transition: margin-right 300ms ease-in-out, margin-left 300ms ease-in-out, margin-bottom 300ms ease-in-out,
-    margin-top 300ms ease-in-out;
+  z-index: 50;
+  transition: margin-right 300ms ease-in-out, margin-left 300ms ease-in-out,
+    margin-bottom 300ms ease-in-out, margin-top 300ms ease-in-out;
   overflow: hidden;
   margin-right: 0;
   position: absolute;
@@ -102,12 +102,12 @@
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr;
   outline: 1px solid var(--std-color);
-  /* min-width: 120px; */
   font-size: 0.9em;
   font-weight: 300;
   border-radius: 3px;
   background-color: black;
   transition: opacity 200ms ease-in-out;
+  z-index: 100;
 }
 .overlay-left .color-switch-container,
 .overlay-up .color-switch-container {
@@ -150,8 +150,8 @@
 
 .gallery-item {
   background: none;
-  transition: border-radius 100ms ease-in-out, background 100ms ease-in-out, width 1000ms ease-in-out,
-    height 1000ms ease-in-out;
+  transition: border-radius 100ms ease-in-out, background 100ms ease-in-out,
+    width 1000ms ease-in-out, height 1000ms ease-in-out;
   display: flexbox;
   background-position: 25% 25%;
   background-size: cover;
@@ -208,7 +208,8 @@
   outline: 1px solid var(--std-color-80);
   flex-shrink: 0;
   color: var(--std-color-80);
-  transition: outline 200ms ease-in-out, color 200ms ease-in-out, background-color 200ms ease-in-out;
+  transition: outline 200ms ease-in-out, color 200ms ease-in-out,
+    background-color 200ms ease-in-out;
 }
 
 .gallery-item-tag:hover {
