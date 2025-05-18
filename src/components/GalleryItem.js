@@ -21,7 +21,6 @@ export class GalleryItem extends React.Component {
         >
           <button
             onClick={() => {
-              this.props.setProject(data);
               window.location.href = `/project/${data.projectID}`;
             }}
             className="gallery-item-button"

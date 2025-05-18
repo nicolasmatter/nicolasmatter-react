@@ -7,12 +7,11 @@ import imageUrlBuilder from "@sanity/image-url";
 import loadingGif from "../assets/icons/loading-rippled.gif";
 import smallFilterIcon from "../assets/icons/small.svg";
 import tileFilterIcon from "../assets/icons/tiles.svg";
-import { useOutletContext } from "react-router-dom";
 
 const builder = imageUrlBuilder(client);
-var waitToMove = false;
 
 export function urlFor(source) {
+  console.log(source);
   return builder.image(source);
 }
 
