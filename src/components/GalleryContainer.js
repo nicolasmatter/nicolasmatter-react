@@ -17,13 +17,9 @@ export function urlFor(source) {
 }
 
 export const GalleryContainer = () => {
-  const { colorScheme, changeColor } = useOutletContext();
   const [data, setData] = useState([]);
   const [filteredProjects, setFilteredProjects] = useState([]);
-  const [activeFilters, setActiveFilters] = useState([]);
-  const [activeProject, setActiveProject] = useState([]);
-  const [activeAbout, setActiveAbout] = useState([]);
-  const [coords, setCoords] = useState([{ x: 0, y: 0 }]);
+
   const [galleryView, setGalleryView] = useState("list-view");
 
   useEffect(() => {
@@ -36,32 +32,7 @@ export const GalleryContainer = () => {
       .catch((err) => {
         console.log(err);
       });
-    PARAMS = '*[_type=="about"]';
-    client
-      .fetch(PARAMS)
-      .then((response) => {
-        setActiveAbout(response);
-      })
-      .catch((err) => {
-        console.log(err);
-      });
   }, []);
-
-  const setOverlay = (data) => {
-    if (data !== undefined) {
-      setActiveProject(data);
-    }
-  };
-
-  const handleMouseMove = (event) => {
-    if (!waitToMove) {
-      waitToMove = true;
-      setTimeout(() => {
-        setCoords([{ x: event.clientX, y: event.clientY }]);
-        waitToMove = false;
-      }, 17);
-    }
-  };
 
   const filterGallery = (string) => {
     let array = document.getElementsByClassName("tag-button");
@@ -113,14 +84,9 @@ export const GalleryContainer = () => {
     return "";
   };
 
-  let activeFiltersString = "";
-  for (var i = 0; i < activeFilters.length; i++) {
-    activeFiltersString += " " + activeFilters[i];
-  }
-
   return (
     <>
-      <div className="gallery-container" onMouseMove={handleMouseMove}>
+      <div className="gallery-container">
         {!data.length && (
           <>
             <img
@@ -163,38 +129,12 @@ export const GalleryContainer = () => {
             ></img>
           </span>
         </div>
-        <div className="color-switch-container">
-          <span
-            className="cc-1-button color-switch-button"
-            onClick={() => changeColor("cc-1")}
-          >
-            1
-          </span>
-          <span
-            className="cc-2-button color-switch-button"
-            onClick={() => changeColor("cc-2")}
-          >
-            2
-          </span>
-          <span
-            className="cc-3-button color-switch-button"
-            onClick={() => changeColor("cc-3")}
-          >
-            3
-          </span>
-          <span
-            className="cc-4-button color-switch-button"
-            onClick={() => changeColor("cc-4")}
-          >
-            4
-          </span>
-        </div>
-        <div className={"gallery " + galleryView + " " + activeFiltersString}>
+
+        <div className={"gallery " + galleryView + " "}>
           {data.map((item) => (
             <GalleryItem
               key={item.projectID}
               data={item}
-              setProject={setOverlay}
               setFilter={filterGallery}
               checkFilter={checkFilter}
               showHideGalleryItem={showHideGalleryItem}
