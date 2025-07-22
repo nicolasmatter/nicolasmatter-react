@@ -14,8 +14,8 @@ const WebGLHead = ({ coords, usingColorScheme }) => {
         state.camera.fov = 30;
       }}
     >
-      <ambientLight intensity={0.4} color={0xfcb38c} />
-      <pointLight position={[10, 10, 10]} intensity={1} />
+      <ambientLight intensity={1.4} color={0xfcb38c} />
+      <pointLight position={[10, 10, 10]} intensity={500} />
       <NicoModel usingColorScheme={usingColorScheme} mousePosition={coords} />
     </Canvas>
   );
