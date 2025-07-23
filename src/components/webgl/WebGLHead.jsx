@@ -1,7 +1,7 @@
 import React, { useRef } from "react";
 
 import { Canvas } from "@react-three/fiber";
-import nico5 from "../assets/models/nico5.glb";
+import nico5 from "../../assets/models/nico5.glb";
 import { useGLTF } from "@react-three/drei";
 
 useGLTF.preload(nico5);
@@ -22,7 +22,6 @@ const WebGLHead = ({ coords, usingColorScheme }) => {
 };
 
 const NicoModel = ({ usingColorScheme, mousePosition }) => {
-  const refMesh = useRef();
   const { nodes, materials } = useGLTF(nico5);
   const rot = [
     0.7 + mousePosition[0].y / window.innerHeight,
@@ -31,7 +30,7 @@ const NicoModel = ({ usingColorScheme, mousePosition }) => {
   ];
 
   return (
-    <group dispose={null}>
+    <group>
       <mesh
         castShadow
         receiveShadow
@@ -40,7 +39,6 @@ const NicoModel = ({ usingColorScheme, mousePosition }) => {
         rotation={rot}
         position={[1, -1, 0]}
         scale={0.01}
-        ref={refMesh}
       >
         {usingColorScheme && <meshStandardMaterial wireframe color="white" />}
       </mesh>
