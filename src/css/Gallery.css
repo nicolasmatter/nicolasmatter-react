@@ -32,7 +32,7 @@
 .filter-container {
   position: fixed;
   right: 2em;
-  top: 2.65em;
+  top: 5.3em;
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
   outline: 1px solid var(--std-color);
@@ -98,7 +98,7 @@
 .color-switch-container {
   position: fixed;
   right: 2em;
-  top: 5.3em;
+  top: 2.65em;
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr;
   outline: 1px solid var(--std-color);
