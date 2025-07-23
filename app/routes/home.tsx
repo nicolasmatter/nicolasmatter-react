@@ -1,6 +1,10 @@
-import HomePage from "../../src/pages/Home";
+import { GalleryContainer } from "../../src/components/GalleryContainer";
 import React from "react";
 
 export default function Home() {
-  return <HomePage />;
+  return (
+    <div>
+      <GalleryContainer />
+    </div>
+  );
 }
