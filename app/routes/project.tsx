@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 
-import { ProjectDetails } from "../components/ProjectDetails";
-import client from "../client";
+import { ProjectDetails } from "../../src/components/ProjectDetails";
+import client from "../../src/client";
 import { useParams } from "react-router";
 
 const ProjectDetail = () => {

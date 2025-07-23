@@ -10,16 +10,23 @@ export class ProjectDetails extends React.Component {
         return (
           <div className="project-details-container">
             <div
-              className="project-details-content"
+              className="project-details-content "
               id="project-details-parent"
             >
-              <SlickGallery key={this.props.sliderKey} imageList={ref.images} />
-              <OverlayText
-                title={ref.name}
-                year={ref.year}
-                portableText={ref.portableText}
-                headline={ref.headline}
-              />
+              <div className="fade-away-image">
+                <SlickGallery
+                  key={this.props.sliderKey}
+                  imageList={ref.images}
+                />
+              </div>
+              <div className="scale-up-text">
+                <OverlayText
+                  title={ref.name}
+                  year={ref.year}
+                  portableText={ref.portableText}
+                  headline={ref.headline}
+                />
+              </div>
             </div>
           </div>
         );

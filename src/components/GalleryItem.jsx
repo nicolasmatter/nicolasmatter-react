@@ -1,3 +1,4 @@
+import { Link } from "react-router";
 import React from "react";
 import { urlFor } from "./GalleryContainer";
 
@@ -19,11 +20,10 @@ export class GalleryItem extends React.Component {
           }
           id={"gallery-item-" + data.projectID}
         >
-          <button
-            onClick={() => {
-              window.location.href = `/project/${data.projectID}`;
-            }}
+          <Link
+            to={`/project/${data.projectID}`}
             className="gallery-item-button"
+            viewTransition
           >
             <div
               className="gallery-item-text"
@@ -33,7 +33,7 @@ export class GalleryItem extends React.Component {
             >
               <span>{data.name}</span>
             </div>
-          </button>
+          </Link>
           <div className="gallery-item-infos">
             <div className="gallery-item-headline">{data.headline}</div>
             <div className="tags-container">

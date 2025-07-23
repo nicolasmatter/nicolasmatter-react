@@ -1,0 +1,44 @@
+/* @view-transition {
+  navigation: auto;
+}
+
+.gallery-item-text {
+  view-transition-name: fade-away-image;
+}
+
+.gallery-item-infos {
+  view-transition-name: scale-up-text;
+}
+
+.fade-away-image {
+  view-transition-name: fade-away-image;
+}
+
+.scale-up-text {
+  view-transition-name: scale-up-text;
+} */
+
+/* ::view-transition-old(fade-away-image) {
+  animation: fade-away-image 0.5s ease-in-out;
+}
+::view-transition-old(scale-up-text) {
+  animation: scale-up-text 0.5s ease-in-out;
+}
+
+@keyframes fade-away-image {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}
+
+@keyframes scale-up-text {
+  from {
+    transform: scale(1);
+  }
+  to {
+    transform: scale(1.1);
+  }
+} */

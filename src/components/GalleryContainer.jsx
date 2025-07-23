@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 
-import { GalleryItem } from "./GalleryItem.js";
+import { GalleryItem } from "./GalleryItem";
 import bigFilterIcon from "../assets/icons/big.svg";
 import client from "../client.js";
 import imageUrlBuilder from "@sanity/image-url";

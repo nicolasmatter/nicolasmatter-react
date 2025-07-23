@@ -1,13 +1,26 @@
 import "./css/main.css";
 
 import React, { useEffect, useState } from "react";
-import { Route, BrowserRouter as Router, Routes } from "react-router-dom";
+import {
+  Route,
+  BrowserRouter as Router,
+  Routes,
+  useLocation,
+} from "react-router";
 
 import About from "./pages/About";
 import Contact from "./pages/Contact";
 import Home from "./pages/Home";
 import Layout from "./layout/Layout";
 import ProjectPage from "./pages/ProjectPage";
+
+function RouteLogger() {
+  const location = useLocation();
+  useEffect(() => {
+    console.log("Route changed:", location.pathname);
+  }, [location]);
+  return null;
+}
 
 const App = () => {
   const [colorScheme, setColorScheme] = useState("");
@@ -35,6 +48,7 @@ const App = () => {
 
   return (
     <Router>
+      <RouteLogger />
       <Routes>
         <Route
           path="/"

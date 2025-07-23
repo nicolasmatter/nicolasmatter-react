@@ -4,6 +4,7 @@
 }
 
 html {
+  height: 100%;
   --std-background: #111;
   --std-color: white;
   --std-color-80: #ffffffcc;
