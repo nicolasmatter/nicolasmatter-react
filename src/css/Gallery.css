@@ -13,7 +13,7 @@
 }
 .gallery {
   display: grid;
-  width: 54%;
+  width: calc(100% - 12em);
   row-gap: 0.5em;
   column-gap: 0.5em;
   overflow: hidden;
@@ -69,7 +69,7 @@
   grid-template-columns: auto;
 }
 .small .gallery-item {
-  height: 100px;
+  height: 10em;
 }
 .small .gallery-item-headline {
   display: -webkit-box;
@@ -100,7 +100,8 @@
   right: 2em;
   top: 2.65em;
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-template-columns: 1fr;
+
   outline: 1px solid var(--std-color);
   font-size: 0.9em;
   font-weight: 300;
@@ -114,7 +115,7 @@
   opacity: 0;
 }
 .color-switch-button {
-  padding: 0.22em 0.6em 0.22em 0.6em;
+  padding: 0.6em 0.6em 0.6em 0.6em;
   cursor: pointer;
   transition: background-color 100ms ease-in-out;
   height: 17px;

@@ -26,6 +26,7 @@ const Layout = ({ colorScheme, changeColor }) => {
         coords={[{ x: mousePosition.x, y: mousePosition.y }]}
         usingColorScheme={colorScheme !== ""}
       />
+      
       <div className="color-switch-container">
         <span
           className="cc-1-button color-switch-button"

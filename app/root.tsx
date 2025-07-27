@@ -40,7 +40,6 @@ export function Layout({ children }: { children: React.ReactNode }) {
       </head>
       <body>
         <LayoutComponent colorScheme={colorScheme} changeColor={changeColor} />
-        {children}
         <ScrollRestoration />
         <Scripts />
       </body>
