@@ -35,7 +35,7 @@
   },
   "scripts": {
     "dev": "npx vite",
-    "build": "npx react-router build",
+    "build": "npx vite build",
     "preview": "npx vite preview"
   },
   "eslintConfig": {
