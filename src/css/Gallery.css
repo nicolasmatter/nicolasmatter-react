@@ -32,9 +32,9 @@
 .filter-container {
   position: fixed;
   right: 2em;
-  top: 5.3em;
+  top: 13.25em;
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-columns: 1fr;
   outline: 1px solid var(--std-color);
   /* min-width: 120px; */
   font-size: 0.9em;
@@ -49,7 +49,7 @@
 }
 .filter-button {
   /* width: 21px; */
-  padding: 0em 1em 0em 1em;
+  padding: 0.6em;
   cursor: pointer;
   transition: background-color 100ms ease-in-out;
   background: var(--active-background);
