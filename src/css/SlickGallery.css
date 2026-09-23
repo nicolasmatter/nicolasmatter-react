@@ -8,7 +8,7 @@
   padding-left: 2em;
   font-size: 0.8em;
   font-style: italic;
-  color: #333;
+  color: var(--std-color);
 }
 
 .slickGallery-item img {

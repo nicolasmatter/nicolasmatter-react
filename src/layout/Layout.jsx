@@ -25,9 +25,10 @@ const Layout = ({ colorScheme, changeColor }) => {
       <WebGLHead
         coords={[{ x: mousePosition.x, y: mousePosition.y }]}
         usingColorScheme={colorScheme !== ""}
+        colorScheme={colorScheme}
       />
-      
-      <div className="color-switch-container">
+
+      {/* <div className="color-switch-container">
         <span
           className="cc-1-button color-switch-button"
           onClick={() => changeColor("cc-1")}
@@ -52,7 +53,7 @@ const Layout = ({ colorScheme, changeColor }) => {
         >
           4
         </span>
-      </div>
+      </div> */}
       <Outlet context={{ colorScheme, changeColor }} />
     </div>
   );

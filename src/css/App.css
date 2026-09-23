@@ -5,65 +5,68 @@
 
 html {
   height: 100%;
-  --std-background: #111;
-  --std-color: white;
-  --std-color-80: #ffffffcc;
-  --std-svg-filter: invert(80%) sepia(92%) saturate(0%) hue-rotate(249deg)
-    brightness(108%) contrast(107%);
-  --active-background: #111;
+  --std-background: #eee;
+  --std-color: #111;
+  --std-color-80: #111111cc;
+  --std-svg-filter: invert(6%) sepia(0%) saturate(0%) hue-rotate(0deg) brightness(15%) contrast(92%);
+  --active-background: #eee;
+  --std-surface: rgba(255, 255, 255, 0.5);
+  --std-surface-strong: rgba(255, 255, 255, 0.75);
+  --std-highlight: rgba(0, 0, 0, 0.1);
+  --std-panel: #fff;
+  --std-active: #ccc;
+  --font-body: "Cutive", "Times New Roman", Times, serif;
+  --font-title: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans",
+    "Droid Sans", "Helvetica Neue", sans-serif;
   /* color combos */
   --c1-bittersweet: #fc7860;
   --c1-gossip: #e1f4b3;
-  --c1-gossip-80: #e1f4b3cc;
-  --c1-svg-filter: invert(98%) sepia(92%) saturate(412%) hue-rotate(18deg)
-    brightness(99%) contrast(93%);
+  --c1-bittersweet-80: #fc7860cc;
+  --c1-svg-filter: invert(62%) sepia(47%) saturate(1694%) hue-rotate(329deg) brightness(101%) contrast(98%);
   --c2-charade: #2d2e3f;
   --c2-burnt-sienna: #e9574d;
-  --c2-burnt-sienna-80: #e9574dcc;
-  --c2-svg-filter: invert(35%) sepia(92%) saturate(1116%) hue-rotate(333deg)
-    brightness(102%) contrast(83%);
+  --c2-charade-80: #2d2e3fcc;
+  --c2-svg-filter: invert(17%) sepia(12%) saturate(743%) hue-rotate(201deg) brightness(93%) contrast(89%);
   --c3-denim: #3a2960;
   --c3-geyser: #f47c2c;
-  --c3-geyser-80: #f47c2ccc;
-  --c3-svg-filter: invert(51%) sepia(85%) saturate(812%) hue-rotate(342deg)
-    brightness(99%) contrast(93%);
+  --c3-denim-80: #3a2960cc;
+  --c3-svg-filter: invert(18%) sepia(29%) saturate(1488%) hue-rotate(232deg) brightness(93%) contrast(92%);
   --c4-denim-dark: #1a56c6;
   --c4-mint-green: #8ff7a9;
-  --c4-mint-green-80: #8ff7a9cc;
-  --c4-svg-filter: invert(85%) sepia(21%) saturate(777%) hue-rotate(76deg)
-    brightness(103%) contrast(94%);
+  --c4-denim-dark-80: #1a56c6cc;
+  --c4-svg-filter: invert(27%) sepia(67%) saturate(2875%) hue-rotate(210deg) brightness(90%) contrast(93%);
 }
 
 .cc-1 {
-  --std-background: var(--c1-bittersweet);
-  --std-color: var(--c1-gossip);
-  --std-color-80: var(--c1-gossip-80);
+  --std-background: var(--c1-gossip);
+  --std-color: var(--c1-bittersweet);
+  --std-color-80: var(--c1-bittersweet-80);
   --std-svg-filter: var(--c1-svg-filter);
-  --active-background: var(--c1-bittersweet);
+  --active-background: var(--c1-gossip);
 }
 
 .cc-2 {
-  --std-background: var(--c2-charade);
-  --std-color: var(--c2-burnt-sienna);
-  --std-color-80: var(--c2-burnt-sienna-80);
+  --std-background: var(--c2-burnt-sienna);
+  --std-color: var(--c2-charade);
+  --std-color-80: var(--c2-charade-80);
   --std-svg-filter: var(--c2-svg-filter);
-  --active-background: var(--c2-charade);
+  --active-background: var(--c2-burnt-sienna);
 }
 
 .cc-3 {
-  --std-background: var(--c3-denim);
-  --std-color: var(--c3-geyser);
-  --std-color-80: var(--c3-geyser-80);
+  --std-background: var(--c3-geyser);
+  --std-color: var(--c3-denim);
+  --std-color-80: var(--c3-denim-80);
   --std-svg-filter: var(--c3-svg-filter);
-  --active-background: var(--c3-denim);
+  --active-background: var(--c3-geyser);
 }
 
 .cc-4 {
-  --std-background: var(--c4-denim-dark);
-  --std-color: var(--c4-mint-green);
-  --std-color-80: var(--c4-mint-green-80);
+  --std-background: var(--c4-mint-green);
+  --std-color: var(--c4-denim-dark);
+  --std-color-80: var(--c4-denim-dark-80);
   --std-svg-filter: var(--c4-svg-filter);
-  --active-background: var(--c4-denim-dark);
+  --active-background: var(--c4-mint-green);
 }
 
 body {
@@ -72,6 +75,7 @@ body {
   height: -webkit-fill-available;
   /* background: #fcb38c; */
   background-color: var(--std-background);
+  color: var(--std-color);
 }
 
 .svg-filter {
@@ -145,7 +149,7 @@ span {
 }
 
 a:visited {
-  color: color-mix(in srgb, #c9c9c9, var(--std-color));
+  color: color-mix(in srgb, #666, var(--std-color));
 }
 a:hover {
   color: var(--std-color);

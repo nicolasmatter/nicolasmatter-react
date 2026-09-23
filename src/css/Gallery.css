@@ -1,7 +1,7 @@
 .gallery-container {
   z-index: 50;
-  transition: margin-right 300ms ease-in-out, margin-left 300ms ease-in-out,
-    margin-bottom 300ms ease-in-out, margin-top 300ms ease-in-out;
+  transition: margin-right 300ms ease-in-out, margin-left 300ms ease-in-out, margin-bottom 300ms ease-in-out,
+    margin-top 300ms ease-in-out;
   overflow: hidden;
   margin-right: 0;
   position: absolute;
@@ -14,7 +14,7 @@
 .gallery {
   display: grid;
   width: calc(100% - 12em);
-  row-gap: 0.5em;
+  row-gap: 1.5em;
   column-gap: 0.5em;
   overflow: hidden;
   padding: 2.65em 1em;
@@ -32,15 +32,14 @@
 .filter-container {
   position: fixed;
   right: 2em;
-  top: 13.25em;
+  top: 3em;
   display: grid;
   grid-template-columns: 1fr;
   outline: 1px solid var(--std-color);
   /* min-width: 120px; */
   font-size: 0.9em;
   font-weight: 300;
-  border-radius: 3px;
-  background-color: black;
+  background-color: var(--std-panel);
   transition: opacity 200ms ease-in-out;
 }
 .overlay-left .filter-container,
@@ -99,14 +98,13 @@
   position: fixed;
   right: 2em;
   top: 2.65em;
-  display: grid;
+  display: none;
   grid-template-columns: 1fr;
 
   outline: 1px solid var(--std-color);
   font-size: 0.9em;
   font-weight: 300;
-  border-radius: 3px;
-  background-color: black;
+  background-color: var(--std-panel);
   transition: opacity 200ms ease-in-out;
   z-index: 100;
 }
@@ -124,19 +122,19 @@
   text-align: center;
 }
 .cc-1 .cc-1-button {
-  background-color: rgba(255, 255, 255, 0.26);
+  background-color: var(--std-highlight);
 }
 .cc-2 .cc-2-button {
-  background-color: rgba(255, 255, 255, 0.26);
+  background-color: var(--std-highlight);
 }
 .cc-3 .cc-3-button {
-  background-color: rgba(255, 255, 255, 0.26);
+  background-color: var(--std-highlight);
 }
 .cc-4 .cc-4-button {
-  background-color: rgba(255, 255, 255, 0.26);
+  background-color: var(--std-highlight);
 }
 .color-switch-button:hover {
-  background-color: rgba(255, 255, 255, 0.26);
+  background-color: var(--std-highlight);
 }
 
 /* classes for moving the overlays */
@@ -151,8 +149,8 @@
 
 .gallery-item {
   background: none;
-  transition: border-radius 100ms ease-in-out, background 100ms ease-in-out,
-    width 1000ms ease-in-out, height 1000ms ease-in-out;
+  transition: border-radius 100ms ease-in-out, background 100ms ease-in-out, width 1000ms ease-in-out,
+    height 1000ms ease-in-out;
   display: flexbox;
   background-position: 25% 25%;
   background-size: cover;
@@ -161,11 +159,11 @@
   grid-template-columns: 50% 50%;
   min-height: 100px;
   min-width: 100px;
-  border-radius: 3px;
   height: 300px;
   min-width: 100px;
-  padding-bottom: 0.5em;
+  padding-bottom: 1.5em;
   border-bottom: 1px solid var(--std-color);
+  overflow: clip;
 }
 
 .gallery-item.hidden {
@@ -174,17 +172,17 @@
 
 .gallery-item-button {
   width: 200%;
-  background: none;
+  background: var(--std-surface);
 }
 
-.gallery-item:hover {
-  background-color: rgba(33, 33, 33, 0.33);
+.gallery-item-button:hover {
+  background-color: var(--std-surface-strong);
 }
 
 .gallery-item-infos {
   color: var(--std-color);
   font-size: 0.8em;
-  padding: 0em 1em;
+  padding: 2em 3em;
   text-align: left;
   pointer-events: none;
 }
@@ -198,25 +196,28 @@
   display: flex;
   max-width: 100%;
   flex-wrap: wrap;
+  gap: 0.5rem;
 }
 
 .gallery-item-tag {
   pointer-events: all;
-  padding: 0.1em 0.5em;
-  margin: 0.2em 0.2em;
+  padding: 0.25em 0.5em;
+  /* margin: 0.2em 0.2em; */
+  display: flex;
+  align-items: center;
   /* flex-grow: 4; */
+  height: 2em;
   border-radius: 6px;
   outline: 1px solid var(--std-color-80);
   flex-shrink: 0;
   color: var(--std-color-80);
-  transition: outline 200ms ease-in-out, color 200ms ease-in-out,
-    background-color 200ms ease-in-out;
+  transition: outline 200ms ease-in-out, color 200ms ease-in-out, background-color 200ms ease-in-out;
 }
 
 .gallery-item-tag:hover {
   outline: 1px solid var(--std-color);
   color: var(--std-color);
-  background-color: rgba(255, 255, 255, 0.26);
+  background-color: var(--std-highlight);
 }
 
 .tag-button {
@@ -224,23 +225,22 @@
 }
 
 .highlighted {
-  background: rgba(255, 255, 255, 0.26);
+  background: var(--std-highlight);
 }
 
 .gallery-item,
 .info-item {
-  background-color: rgba(0, 0, 0, 0.33);
   transition: background-color 200ms ease-in-out, transform 200ms ease-in-out;
 }
 
 .gallery-item:active,
 .info-item:active {
   transform: scale(0.98);
-  background-color: #333;
+  background-color: var(--std-active);
 }
 
 .info-item {
-  background-color: rgba(133, 133, 133, 0.67);
+  background-color: var(--std-surface-strong);
   left: 1em;
   bottom: 1em;
 }
@@ -271,8 +271,8 @@
 .gallery-item-text {
   background-position: center;
   background-size: cover;
-  border-radius: 3px;
   color: var(--std-color);
+  font-family: var(--font-title);
   font-size: 1.5em;
   font-weight: 300;
   width: 50%;
@@ -303,11 +303,12 @@
 }
 
 .gallery-item .gallery-item-text span {
-  background-color: rgba(133, 133, 133, 0.167);
+  background-color: var(--std-surface);
+  background-color: rgba(255, 255, 255, 0.5);
 }
 
 .gallery-item:hover .gallery-item-text span {
-  background-color: rgba(33, 33, 33, 0.67);
+  background-color: var(--std-surface-strong);
 }
 
 .active {

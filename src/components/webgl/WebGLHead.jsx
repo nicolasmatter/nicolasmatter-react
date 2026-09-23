@@ -1,4 +1,4 @@
-import React, { useRef } from "react";
+import React, { useEffect, useState } from "react";
 
 import { Canvas } from "@react-three/fiber";
 import nico5 from "../../assets/models/nico5.glb";
@@ -6,22 +6,37 @@ import { useGLTF } from "@react-three/drei";
 
 useGLTF.preload(nico5);
 
-const WebGLHead = ({ coords, usingColorScheme }) => {
+const readThemeColor = () => {
+  if (typeof document === "undefined") {
+    return "#111";
+  }
   return (
-    <Canvas
-      className="main-canvas"
-      onCreated={(state) => {
-        state.camera.fov = 30;
-      }}
-    >
+    getComputedStyle(document.body).getPropertyValue("--std-color").trim() ||
+    "#111"
+  );
+};
+
+const WebGLHead = ({ coords, usingColorScheme, colorScheme }) => {
+  const [wireframeColor, setWireframeColor] = useState(readThemeColor);
+
+  useEffect(() => {
+    setWireframeColor(readThemeColor());
+  }, [usingColorScheme, colorScheme]);
+
+  return (
+    <Canvas className="main-canvas" camera={{ fov: 30 }}>
       <ambientLight intensity={1.4} color={0xfcb38c} />
       <pointLight position={[10, 10, 10]} intensity={500} />
-      <NicoModel usingColorScheme={usingColorScheme} mousePosition={coords} />
+      <NicoModel
+        usingColorScheme={usingColorScheme}
+        mousePosition={coords}
+        wireframeColor={wireframeColor}
+      />
     </Canvas>
   );
 };
 
-const NicoModel = ({ usingColorScheme, mousePosition }) => {
+const NicoModel = ({ usingColorScheme, mousePosition, wireframeColor }) => {
   const { nodes, materials } = useGLTF(nico5);
   const rot = [
     0.7 + mousePosition[0].y / window.innerHeight,
@@ -40,7 +55,9 @@ const NicoModel = ({ usingColorScheme, mousePosition }) => {
         position={[1, -1, 0]}
         scale={0.01}
       >
-        {usingColorScheme && <meshStandardMaterial wireframe color="white" />}
+        {usingColorScheme && (
+          <meshStandardMaterial wireframe color={wireframeColor} />
+        )}
       </mesh>
     </group>
   );
