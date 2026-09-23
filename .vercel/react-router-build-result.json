@@ -33,9 +33,9 @@
     }
   },
   "reactRouterConfig": {
-    "appDirectory": "C:/Users/nicii/Documents/GitHub/nicolasmatter-react/app",
+    "appDirectory": "/Users/nmatter/Documents/GitHub/nicolasmatter-react/app",
     "basename": "/",
-    "buildDirectory": "C:/Users/nicii/Documents/GitHub/nicolasmatter-react/build",
+    "buildDirectory": "/Users/nmatter/Documents/GitHub/nicolasmatter-react/build",
     "future": {
       "unstable_middleware": false,
       "unstable_optimizeDeps": false,
