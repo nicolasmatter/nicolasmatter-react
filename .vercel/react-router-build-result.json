@@ -1,0 +1,89 @@
+{
+  "buildManifest": {
+    "routes": {
+      "root": {
+        "path": "",
+        "id": "root",
+        "file": "root.tsx"
+      },
+      "routes/home": {
+        "id": "routes/home",
+        "parentId": "root",
+        "file": "./routes/home.tsx",
+        "path": "/"
+      },
+      "routes/about": {
+        "id": "routes/about",
+        "parentId": "root",
+        "file": "./routes/about.tsx",
+        "path": "/about"
+      },
+      "routes/contact": {
+        "id": "routes/contact",
+        "parentId": "root",
+        "file": "./routes/contact.tsx",
+        "path": "/contact"
+      },
+      "routes/project": {
+        "id": "routes/project",
+        "parentId": "root",
+        "file": "./routes/project.tsx",
+        "path": "/project/:id"
+      }
+    }
+  },
+  "reactRouterConfig": {
+    "appDirectory": "C:/Users/nicii/Documents/GitHub/nicolasmatter-react/app",
+    "basename": "/",
+    "buildDirectory": "C:/Users/nicii/Documents/GitHub/nicolasmatter-react/build",
+    "future": {
+      "unstable_middleware": false,
+      "unstable_optimizeDeps": false,
+      "unstable_splitRouteModules": false,
+      "unstable_subResourceIntegrity": false,
+      "unstable_viteEnvironmentApi": false
+    },
+    "routes": {
+      "root": {
+        "path": "",
+        "id": "root",
+        "file": "root.tsx"
+      },
+      "routes/home": {
+        "id": "routes/home",
+        "parentId": "root",
+        "file": "./routes/home.tsx",
+        "path": "/"
+      },
+      "routes/about": {
+        "id": "routes/about",
+        "parentId": "root",
+        "file": "./routes/about.tsx",
+        "path": "/about"
+      },
+      "routes/contact": {
+        "id": "routes/contact",
+        "parentId": "root",
+        "file": "./routes/contact.tsx",
+        "path": "/contact"
+      },
+      "routes/project": {
+        "id": "routes/project",
+        "parentId": "root",
+        "file": "./routes/project.tsx",
+        "path": "/project/:id"
+      }
+    },
+    "routeDiscovery": {
+      "mode": "initial"
+    },
+    "serverBuildFile": "index.js",
+    "serverModuleFormat": "esm",
+    "ssr": false
+  },
+  "viteConfig": {
+    "build": {
+      "assetsDir": "assets"
+    }
+  }
+}

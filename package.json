@@ -34,9 +34,9 @@
     "vite-tsconfig-paths": "^5.1.4"
   },
   "scripts": {
-    "dev": "npx vite",
-    "build": "npx vite build",
-    "preview": "npx vite preview"
+    "dev": "react-router dev",
+    "build": "react-router build",
+    "preview": "vite preview"
   },
   "eslintConfig": {
     "extends": [
